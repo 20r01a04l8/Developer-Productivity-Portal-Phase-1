@@ -21,6 +21,12 @@ const PRIMARY_NAV_ITEMS = [
   }
 ];
 
+const FOOTER_LINKS = [
+  { href: "./index.html", label: "Dashboard" },
+  { href: "./projects.html", label: "Projects" },
+  { href: "./tasks.html", label: "Tasks" }
+];
+
 export function renderPrimaryNavigation() {
   const nav = document.getElementById("primary-nav");
 
@@ -40,6 +46,41 @@ export function renderPrimaryNavigation() {
       </span>
     </a>
   `).join("");
+}
+
+export function renderAppFooter() {
+  const footer = document.getElementById("app-footer");
+
+  if (!footer) {
+    return;
+  }
+
+  const currentYear = new Date().getFullYear();
+
+  footer.innerHTML = `
+    <div class="app-footer-shell">
+      <div class="app-footer-brand">
+        <p class="panel-label">Developer Productivity Portal</p>
+        <h3>Built for Developers, Designed for Productivity</h3>
+        <p>
+          Built as a Phase 1 prototype with a focus on scalable UI architecture, shared shell components,
+          and future-ready front-end foundations.
+        </p>
+      </div>
+      <div class="app-footer-links">
+        <p class="app-footer-heading">Explore</p>
+        <div class="app-footer-link-list">
+          ${FOOTER_LINKS.map((link) => `<a href="${link.href}">${link.label}</a>`).join("")}
+        </div>
+      </div>
+      <div class="app-footer-contact">
+        <p class="app-footer-heading">Contact</p>
+        <a href="mailto:support@developerproductivityportal.dev">support@developerproductivityportal.dev</a>
+        <span>Release track: Phase 1 prototype</span>
+        <span>Last shell refresh: ${currentYear}</span>
+      </div>
+    </div>
+  `;
 }
 
 export function initializeResponsiveNavigation() {

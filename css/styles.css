@@ -317,7 +317,8 @@ button {
 .page-header,
 .status-banner,
 .panel,
-.metric-card {
+.metric-card,
+.app-footer {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
 }
@@ -350,7 +351,8 @@ button {
 .page-header,
 .panel,
 .status-banner,
-.metric-card {
+.metric-card,
+.app-footer {
   padding: var(--space-4);
 }
 
@@ -932,6 +934,81 @@ body[data-page="login"] {
 
 .nav-note {
   margin-top: auto;
+}
+
+.app-footer {
+  margin-top: var(--space-2);
+}
+
+.app-footer-shell,
+.app-footer-link-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.app-footer-shell {
+  grid-template-columns: 1.3fr 0.9fr 0.8fr;
+  align-items: start;
+}
+
+.app-footer-brand,
+.app-footer-links,
+.app-footer-contact {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.app-footer-brand h3,
+.app-footer-brand p,
+.app-footer-links p,
+.app-footer-contact p,
+.app-footer-contact span {
+  margin: 0;
+}
+
+.app-footer-brand h3 {
+  font-size: 1.15rem;
+}
+
+.app-footer-brand p,
+.app-footer-contact span {
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.app-footer-heading {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.app-footer-link-list {
+  grid-template-columns: repeat(3, minmax(0, auto));
+  gap: var(--space-2);
+}
+
+.app-footer-link-list a,
+.app-footer-contact a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0.72rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  color: var(--accent-strong);
+  font-weight: 600;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.app-footer-link-list a:hover,
+.app-footer-link-list a:focus-visible,
+.app-footer-contact a:hover,
+.app-footer-contact a:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(23, 89, 74, 0.24);
+  box-shadow: 0 10px 24px rgba(20, 44, 30, 0.08);
 }
 
 .user-section .panel-label {
