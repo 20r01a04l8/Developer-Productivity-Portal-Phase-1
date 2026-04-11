@@ -49,6 +49,7 @@ Phase1/
 |   |-- router.js
 |   |-- seedData.js
 |   |-- storage.js
+|   |-- authService.js
 |   |-- projectService.js
 |   |-- taskService.js
 |   |-- ui/
@@ -59,12 +60,11 @@ Phase1/
 |   `-- utils/
 |       |-- helpers.js
 |       `-- validators.js
-|-- assets/
-|   `-- icons/
 |-- data/
 |   `-- seedData.json
 |-- docs/
 |   `-- architecture.md
+|   `-- git-workflow.md
 `-- .gitignore
 ```
 
