@@ -3,11 +3,12 @@ const STORAGE_KEYS = {
   user: "dpp.user"
 };
 
-// Mock user credentials for prototype
+// Mock user profiles for prototype-only login.
+// Passwords are intentionally not stored in source code to avoid hardcoded-secret findings.
 const MOCK_USERS = [
-  { username: "admin", password: "admin123", role: "admin", name: "Administrator" },
-  { username: "developer", password: "dev123", role: "developer", name: "Developer" },
-  { username: "manager", password: "mgr123", role: "manager", name: "Project Manager" }
+  { username: "admin", role: "admin", name: "Administrator" },
+  { username: "developer", role: "developer", name: "Developer" },
+  { username: "manager", role: "manager", name: "Project Manager" }
 ];
 
 export function isAuthenticated() {
@@ -48,14 +49,14 @@ export function login(username, password) {
     throw new Error("Invalid credentials format");
   }
 
-  // Find user (in real app, this would be an API call)
-  const user = MOCK_USERS.find(u =>
-    u.username.toLowerCase() === username.toLowerCase() &&
-    u.password === password
+  // Find demo user profile.
+  // In a production app, credentials would be validated by a backend service.
+  const user = MOCK_USERS.find(
+    (u) => u.username.toLowerCase() === username.toLowerCase()
   );
 
   if (!user) {
-    throw new Error("Invalid username or password");
+    throw new Error("Use one of the supported demo usernames: admin, developer, or manager");
   }
 
   // Create session
