@@ -12,35 +12,50 @@
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="app-shell">
     <aside class="sidebar" aria-label="Primary">
-      <div class="brand-block">
-        <p class="eyebrow">Phase 1 Prototype</p>
-        <h1>Developer Productivity Portal</h1>
-        <p class="brand-copy">A static, future-ready operations cockpit for engineering delivery.</p>
-      </div>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="./index.html" data-route="dashboard">Dashboard</a>
-        <a href="./projects.html" data-route="projects">Projects</a>
-        <a href="./tasks.html" data-route="tasks">Tasks</a>
-      </nav>
-
-      <section id="user-section" class="user-section surface panel-compact" aria-labelledby="user-info-title">
-        <div id="user-info">
-          <p class="panel-label">Current User</p>
-          <h3 id="user-info-title">Loading...</h3>
+      <div class="sidebar-top">
+        <div class="brand-block">
+          <p class="eyebrow">Phase 1 Prototype</p>
+          <h1>Developer Productivity Portal</h1>
+          <p class="brand-copy">A static, future-ready operations cockpit for engineering delivery.</p>
         </div>
-        <button id="logout-btn" class="button button-secondary" style="width: 100%;">Sign Out</button>
-      </section>
-      <section class="panel surface panel-compact" aria-labelledby="phase-insight-title">
-        <p class="panel-label">Architecture Note</p>
-        <h2 id="phase-insight-title" style="color: black;">Foundation for later phases</h2>
-        <p style="color: black;">Data contracts, services, and view modules are designed to lift into APIs and React with minimal churn.</p>
-      </section>
+        <button
+          type="button"
+          id="nav-toggle"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-panel"
+          aria-label="Toggle primary navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div id="nav-panel" class="nav-panel">
+        <div class="nav-intro">
+          <span class="nav-intro-chip">System Navigation</span>
+          <p>Move between the portfolio overview, project operations, and execution workflows.</p>
+        </div>
+        <nav id="primary-nav" class="nav-links" aria-label="Primary navigation"></nav>
+
+        <section id="user-section" class="user-section surface panel-compact" aria-labelledby="user-info-title">
+          <div id="user-info">
+            <p class="panel-label">Current User</p>
+            <h3 id="user-info-title">Loading...</h3>
+          </div>
+          <button id="logout-btn" class="button button-secondary" style="width: 100%;">Sign Out</button>
+        </section>
+        <section class="panel surface panel-compact nav-note" aria-labelledby="phase-insight-title">
+          <p class="panel-label">Architecture Note</p>
+          <h2 id="phase-insight-title" style="color: black;">Foundation for later phases</h2>
+          <p style="color: black;">Data contracts, services, and view modules are designed to lift into APIs and React with minimal churn.</p>
+        </section>
+      </div>
     </aside>
 
     <main id="main-content" class="content">
       <header class="page-header">
         <div>
-          <p class="eyebrow">Dashboard</p>
           <h2>Engineering delivery at a glance</h2>
           <p class="page-copy">Monitor portfolio health, project activity, and execution hotspots from one place.</p>
         </div>

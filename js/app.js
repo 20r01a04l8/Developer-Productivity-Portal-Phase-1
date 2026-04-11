@@ -1,5 +1,10 @@
 import { initializeStorage } from "./storage.js";
-import { highlightActiveRoute, initializeUserSection } from "./router.js";
+import {
+  renderPrimaryNavigation,
+  initializeResponsiveNavigation,
+  highlightActiveRoute,
+  initializeUserSection
+} from "./router.js";
 import { initializeDashboard } from "./ui/dashboard.js";
 import { initializeProjectUI } from "./ui/projectUI.js";
 import { initializeTaskUI } from "./ui/taskUI.js";
@@ -8,6 +13,8 @@ import { requireAuthentication } from "./authService.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initializeStorage();
+  renderPrimaryNavigation();
+  initializeResponsiveNavigation();
   highlightActiveRoute();
   initializeUserSection();
 
