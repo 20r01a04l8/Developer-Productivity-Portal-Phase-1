@@ -1,6 +1,7 @@
 import { initializeStorage } from "./storage.js";
 import {
   renderPrimaryNavigation,
+  renderAppFooter,
   initializeResponsiveNavigation,
   highlightActiveRoute,
   initializeUserSection
@@ -14,6 +15,7 @@ import { requireAuthentication } from "./authService.js";
 document.addEventListener("DOMContentLoaded", () => {
   initializeStorage();
   renderPrimaryNavigation();
+  renderAppFooter();
   initializeResponsiveNavigation();
   highlightActiveRoute();
   initializeUserSection();

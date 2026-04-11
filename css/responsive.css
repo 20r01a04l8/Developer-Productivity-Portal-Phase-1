@@ -3,6 +3,7 @@
   .dashboard-grid,
   .dashboard-overview-grid,
   .dashboard-planning-grid,
+  .app-footer-shell,
   .metrics-grid,
   .dashboard-pillars,
   .extension-grid,
@@ -69,6 +70,7 @@
   .dashboard-grid,
   .dashboard-overview-grid,
   .dashboard-planning-grid,
+  .app-footer-shell,
   .dashboard-pillars,
   .extension-grid,
   .filter-row {
@@ -111,6 +113,10 @@
   .nav-link-label-row {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .app-footer-link-list {
+    grid-template-columns: 1fr;
   }
 }
 
