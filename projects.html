@@ -12,30 +12,45 @@
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="app-shell">
     <aside class="sidebar" aria-label="Primary">
-      <div class="brand-block">
-        <p class="eyebrow">Phase 1 Prototype</p>
-        <h1>Developer Productivity Portal</h1>
-        <p class="brand-copy">Organize project ownership and status with a lightweight, persistent UI.</p>
-      </div>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="./index.html" data-route="dashboard">Dashboard</a>
-        <a href="./projects.html" data-route="projects">Projects</a>
-        <a href="./tasks.html" data-route="tasks">Tasks</a>
-      </nav>
-
-      <section id="user-section" class="user-section surface panel-compact" aria-labelledby="user-info-title">
-        <div id="user-info">
-          <p class="panel-label">Current User</p>
-          <h3 id="user-info-title">Loading...</h3>
+      <div class="sidebar-top">
+        <div class="brand-block">
+          <p class="eyebrow">Phase 1 Prototype</p>
+          <h1>Developer Productivity Portal</h1>
+          <p class="brand-copy">Organize project ownership and status with a lightweight, persistent UI.</p>
         </div>
-        <button id="logout-btn" class="button button-secondary" style="width: 100%;">Sign Out</button>
-      </section>
+        <button
+          type="button"
+          id="nav-toggle"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-panel"
+          aria-label="Toggle primary navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div id="nav-panel" class="nav-panel">
+        <div class="nav-intro">
+          <span class="nav-intro-chip">System Navigation</span>
+          <p>Move between the portfolio overview, project operations, and execution workflows.</p>
+        </div>
+        <nav id="primary-nav" class="nav-links" aria-label="Primary navigation"></nav>
+
+        <section id="user-section" class="user-section surface panel-compact" aria-labelledby="user-info-title">
+          <div id="user-info">
+            <p class="panel-label">Current User</p>
+            <h3 id="user-info-title">Loading...</h3>
+          </div>
+          <button id="logout-btn" class="button button-secondary" style="width: 100%;">Sign Out</button>
+        </section>
+      </div>
     </aside>
 
     <main id="main-content" class="content">
       <header class="page-header">
         <div>
-          <p class="eyebrow">Project Management</p>
           <h2>Maintain a clear delivery portfolio</h2>
           <p class="page-copy">Create, update, and retire projects while keeping the data contract aligned with future APIs.</p>
         </div>
