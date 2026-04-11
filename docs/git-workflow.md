@@ -1,6 +1,6 @@
 # Git Workflow Showcase
 
-This document now reflects the updated pull request plan for the project. For now, only PR 1 is the active priority.
+This document reflects the current feature branch strategy and the pull request slices used to build Phase 1. The repository now contains work across documentation, login, dashboard, shared navigation, and shared footer layers.
 
 ## Branch Strategy
 
@@ -15,13 +15,16 @@ Feature branches:
 - `feature/navbar-component`
 - `feature/footer-component`
 
-## Planned Pull Requests
+Current active branch:
+- `feature/footer-component`
+
+## Pull Request Breakdown
 
 ### PR 1
 - Feature: `Project Documentation`
 - Description: `Improve README with setup steps`
 - Branch name: `feature/readme-enhancement`
-- Priority: `Current priority`
+- Status: `Documentation baseline`
 
 Suggested PR title:
 ```text
@@ -47,44 +50,67 @@ This helps anyone opening the repository understand how to start the project qui
 - Feature: `Login UI`
 - Description: `Add a simple login page`
 - Branch name: `feature/login-ui`
-- Priority: `Later`
+- Status: `Implemented`
+
+Suggested PR title:
+```text
+feat: add simple login page UI
+```
 
 ### PR 3
 - Feature: `Dashboard Page`
 - Description: `Create a basic dashboard layout`
 - Branch name: `feature/dashboard-page`
-- Priority: `Later`
+- Status: `Implemented`
+
+Suggested PR title:
+```text
+feat: create basic dashboard page layout
+```
 
 ### PR 4
 - Feature: `Navigation Bar`
 - Description: `Add a reusable navbar component`
 - Branch name: `feature/navbar-component`
-- Priority: `Later`
+- Status: `Implemented`
+
+Suggested PR title:
+```text
+feat: add reusable navigation bar component
+```
 
 ### PR 5
 - Feature: `Footer Component`
 - Description: `Add a footer with contact info`
 - Branch name: `feature/footer-component`
-- Priority: `Later`
+- Status: `In progress / current branch`
 
-## How I Would Do This
+Suggested PR title:
+```text
+feat: add reusable footer component with contact information
+```
 
-The safest and cleanest way is to work on one branch at a time.
+## Delivery Sequence
 
-1. Start from `develop`.
-2. Create a new branch called `feature/readme-enhancement`.
-3. Update `README.md` with the setup steps.
-4. Check the changes in VS Code.
-5. Commit the changes with a message like `docs: improve README with setup steps`.
-6. Push the branch to GitHub.
-7. Create a pull request from `feature/readme-enhancement` into `develop`.
-8. Review it, approve it, and merge it.
+The cleanest way to structure this repository is to keep one responsibility per branch.
 
-For now, stop after PR 1 is completed. The other branches can be created later when you are ready.
+1. Start from the latest clean integration branch such as `develop`.
+2. Create a focused feature branch for one workstream only.
+3. Keep changes limited to that workstream so the PR stays easy to review.
+4. Commit with a message that clearly describes the feature or fix.
+5. Push the branch and open the pull request into `develop`.
+6. Review, approve, and merge before beginning the next workstream.
+
+This repository has been modeled around that approach:
+- documentation branch for onboarding clarity
+- login branch for authentication entry UX
+- dashboard branch for the landing page foundation
+- navbar branch for shared shell navigation
+- footer branch for shared shell footer content
 
 ## Beginner-Friendly VS Code Steps
 
-These steps are written for someone new to Git and GitHub.
+These steps work for any feature branch in this repository.
 
 ### Part 1: Create the branch
 
@@ -92,26 +118,26 @@ These steps are written for someone new to Git and GitHub.
 2. Look at the bottom-left corner of VS Code. You will see the current branch name.
 3. Click the branch name.
 4. Choose `Create new branch`.
-5. Type: `feature/readme-enhancement`
+5. Type the branch name you want, such as `feature/footer-component`
 6. Press Enter.
 7. If VS Code asks which branch to create it from, choose `develop`.
 
-### Part 2: Make and save your README changes
+### Part 2: Make and save your changes
 
 1. Open `README.md`.
-2. Add or update the setup steps.
+2. Open the files related to your current feature.
 3. Press `Ctrl + S` to save the file.
 
 ### Part 3: Commit the changes
 
 1. Click the Source Control icon in the left sidebar.
-2. You should see `README.md` listed under changes.
+2. You should see your changed files listed.
 3. Move your mouse over the file and click the `+` sign to stage it.
 4. At the top, there will be a message box.
-5. Type this commit message:
+5. Type a commit message that matches the feature.
 
 ```text
-docs: improve README with setup steps
+feat: add reusable footer component with contact information
 ```
 
 6. Click `Commit`.
@@ -131,15 +157,15 @@ This uploads your branch to GitHub.
 1. Open the Source Control panel.
 2. If you have the GitHub Pull Requests extension installed, look for `Create Pull Request`.
 3. Click it.
-4. Set the source branch to `feature/readme-enhancement`.
+4. Set the source branch to your feature branch.
 5. Set the target branch to `develop`.
 6. Use this title:
 
 ```text
-docs: improve README with setup steps
+feat: add reusable footer component with contact information
 ```
 
-7. Use the PR description from the PR 1 section above.
+7. Use the PR description for your current feature.
 8. Click `Create`.
 
 If you do not see the pull request option in VS Code, you can still push the branch and open GitHub in the browser to create it there.
@@ -160,7 +186,7 @@ If approval is available in VS Code:
 
 1. Open the pull request.
 2. Confirm the base branch is `develop`.
-3. Confirm the changes are only for the README work.
+3. Confirm the changes are only for the current feature branch scope.
 4. Click `Merge Pull Request` or the merge option shown in VS Code.
 5. Choose the standard merge option unless your team uses squash merge.
 6. Confirm the merge.
@@ -173,8 +199,8 @@ If approval is available in VS Code:
 
 ## Simple Rule To Remember
 
-For now, use this sequence only:
+Use this sequence for every feature:
 
-`develop` -> `feature/readme-enhancement` -> Pull Request -> Review/Approve -> Merge back into `develop`
+`develop` -> `feature/<feature-name>` -> Pull Request -> Review/Approve -> Merge back into `develop`
 
-Do not start the login, dashboard, navbar, or footer branches until PR 1 is finished.
+Keep each branch focused on one feature only so the project stays clean and reviewable.

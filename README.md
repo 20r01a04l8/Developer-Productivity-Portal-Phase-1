@@ -1,11 +1,14 @@
 # Developer Productivity Portal - Phase 1
 
-Developer Productivity Portal is a production-style static web prototype for managing engineering projects and tasks. Phase 1 focuses on strong front-end architecture, accessibility, and browser-based persistence using LocalStorage.
+Developer Productivity Portal is a production-style static web prototype for managing engineering projects and tasks. Phase 1 focuses on a reusable front-end shell, accessible workflows, and browser-based persistence using LocalStorage.
 
 ## Features
-- Dashboard with KPI summary cards for projects and tasks
+- Secure prototype login with demo usernames and client-side session handling
+- Dashboard with KPI summary cards, delivery health insights, and extension-point sections
 - Project management with create, edit, delete, and seed reset flows
 - Task management with create, edit, delete, search, and multi-filter support
+- Reusable responsive navigation shell shared across dashboard, projects, and tasks
+- Reusable footer with contact information and supporting product metadata
 - LocalStorage initialization from bundled seed data
 - Accessible modals, semantic structure, keyboard support, and visible feedback states
 - Modular ES6 architecture designed for migration to React and backend APIs
@@ -17,9 +20,10 @@ Developer Productivity Portal is a production-style static web prototype for man
 - Browser LocalStorage
 
 ## Run Locally
-1. Open `index.html` in a modern browser.
-2. Navigate between Dashboard, Projects, and Tasks using the sidebar.
-3. Use the reset action on the Projects page if you want to restore the starter dataset.
+1. Open `login.html` or `index.html` in a modern browser.
+2. If you open `login.html`, sign in with one of the supported demo usernames.
+3. Navigate between Dashboard, Projects, and Tasks using the shared application navigation.
+4. Use the reset action on the Projects page if you want to restore the starter dataset.
 
 No build step or package installation is required.
 
@@ -33,6 +37,7 @@ No build step or package installation is required.
 ```text
 Phase1/
 |-- index.html
+|-- login.html
 |-- projects.html
 |-- tasks.html
 |-- css/
@@ -40,6 +45,7 @@ Phase1/
 |   `-- responsive.css
 |-- js/
 |   |-- app.js
+|   |-- authService.js
 |   |-- router.js
 |   |-- seedData.js
 |   |-- storage.js
@@ -47,6 +53,7 @@ Phase1/
 |   |-- taskService.js
 |   |-- ui/
 |   |   |-- dashboard.js
+|   |   |-- loginUI.js
 |   |   |-- projectUI.js
 |   |   `-- taskUI.js
 |   `-- utils/
@@ -62,7 +69,9 @@ Phase1/
 ```
 
 ## Architectural Highlights
-- `app.js` performs startup initialization and page dispatching.
+- `app.js` performs startup initialization, shared shell rendering, and page dispatching.
+- `router.js` centralizes reusable navigation and footer rendering for the application shell.
+- `authService.js` handles prototype-only authentication state and access gating.
 - `storage.js` isolates persistence behind a narrow interface.
 - Services enforce business rules and sanitize inputs before saving.
 - UI modules own rendering and event wiring for each page.
@@ -87,17 +96,17 @@ Additional detail is documented in `docs/architecture.md`.
 - `develop`: shared integration branch
 - `feature/<feature-name>`: feature delivery branches
 
-Current planned pull requests for this phase:
-- PR 1 `Project Documentation` - improve README with setup steps - branch `feature/readme-enhancement`
-- PR 2 `Login UI` - add a simple login page - branch `feature/login-ui`
-- PR 3 `Dashboard Page` - create a basic dashboard layout - branch `feature/dashboard-page`
-- PR 4 `Navigation Bar` - add a reusable navbar component - branch `feature/navbar-component`
-- PR 5 `Footer Component` - add a footer with contact info - branch `feature/footer-component`
+Current repository workstreams:
+- PR 1 `Project Documentation` - repository onboarding and workflow notes
+- PR 2 `Login UI` - prototype authentication entry flow
+- PR 3 `Dashboard Page` - dashboard landing page foundation
+- PR 4 `Navigation Bar` - reusable application navigation shell
+- PR 5 `Footer Component` - reusable footer with contact metadata
 
-Current priority:
-- Focus on PR 1 only for now: `Project Documentation` on branch `feature/readme-enhancement`
+Current branch:
+- `feature/footer-component`
 
-Suggested showcase branches, pull request notes, and beginner-friendly VS Code steps are documented in `docs/git-workflow.md`.
+Implementation notes and branch guidance are documented in `docs/git-workflow.md`.
 
 ## Notes
 - `data/seedData.json` is included for reference and portability.
