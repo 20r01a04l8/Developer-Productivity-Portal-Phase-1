@@ -1,7 +1,11 @@
 @media (max-width: 1180px) {
   .app-shell,
   .dashboard-grid,
+  .dashboard-overview-grid,
+  .dashboard-planning-grid,
   .metrics-grid,
+  .dashboard-pillars,
+  .extension-grid,
   .filter-row {
     grid-template-columns: 1fr 1fr;
   }
@@ -34,6 +38,10 @@
 
   .metrics-grid,
   .dashboard-grid,
+  .dashboard-overview-grid,
+  .dashboard-planning-grid,
+  .dashboard-pillars,
+  .extension-grid,
   .filter-row {
     grid-template-columns: 1fr;
   }

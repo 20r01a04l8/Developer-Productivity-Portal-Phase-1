@@ -81,6 +81,36 @@
         </article>
       </section>
 
+      <section class="dashboard-overview-grid" aria-label="Dashboard overview">
+        <article class="surface panel dashboard-hero" aria-labelledby="dashboard-foundation-title">
+          <div class="section-heading">
+            <div>
+              <p class="panel-label">Landing Experience</p>
+              <h3 id="dashboard-foundation-title">Dashboard foundation for daily delivery visibility</h3>
+            </div>
+          </div>
+          <p class="page-copy">
+            This layout is designed to become the operational home for engineering teams, with room for project health,
+            workload signals, release readiness, and future role-based widgets.
+          </p>
+          <div class="dashboard-pillars" aria-label="Dashboard design principles">
+            <span class="dashboard-chip">Portfolio summary</span>
+            <span class="dashboard-chip">Execution visibility</span>
+            <span class="dashboard-chip">Scalable widget zones</span>
+          </div>
+        </article>
+
+        <article class="surface panel" aria-labelledby="dashboard-health-title">
+          <div class="section-heading">
+            <div>
+              <p class="panel-label">Health Check</p>
+              <h3 id="dashboard-health-title">Delivery status snapshot</h3>
+            </div>
+          </div>
+          <dl id="dashboard-health" class="health-list" aria-live="polite"></dl>
+        </article>
+      </section>
+
       <section class="dashboard-grid">
         <article class="surface panel" aria-labelledby="project-snapshot-title">
           <div class="section-heading">
@@ -104,6 +134,50 @@
           </div>
           <div id="dashboard-task-state" class="state-message" hidden></div>
           <div id="dashboard-tasks" class="list-stack" aria-live="polite"></div>
+        </article>
+      </section>
+
+      <section class="dashboard-planning-grid" aria-label="Future dashboard extension points">
+        <article class="surface panel" aria-labelledby="widget-roadmap-title">
+          <div class="section-heading">
+            <div>
+              <p class="panel-label">Future Widgets</p>
+              <h3 id="widget-roadmap-title">Planned dashboard extension points</h3>
+            </div>
+          </div>
+          <div class="extension-grid">
+            <article class="extension-card">
+              <strong>Project Health</strong>
+              <p>Status rollups, owner attention areas, and timeline risk highlights.</p>
+            </article>
+            <article class="extension-card">
+              <strong>Team Activity</strong>
+              <p>Recent changes, task throughput, and work-in-progress trends.</p>
+            </article>
+            <article class="extension-card">
+              <strong>Role Views</strong>
+              <p>Specialized dashboard modules for managers, developers, and reviewers.</p>
+            </article>
+          </div>
+        </article>
+
+        <article class="surface panel" aria-labelledby="dashboard-actions-title">
+          <div class="section-heading">
+            <div>
+              <p class="panel-label">Next Actions</p>
+              <h3 id="dashboard-actions-title">Use the dashboard as your starting point</h3>
+            </div>
+          </div>
+          <div class="action-list">
+            <a class="action-card" href="./projects.html">
+              <strong>Review project portfolio</strong>
+              <span>Open the projects module to manage scope, ownership, and delivery status.</span>
+            </a>
+            <a class="action-card" href="./tasks.html">
+              <strong>Inspect task execution</strong>
+              <span>Go to the tasks module to review work items, priority, and progress.</span>
+            </a>
+          </div>
         </article>
       </section>
     </main>
