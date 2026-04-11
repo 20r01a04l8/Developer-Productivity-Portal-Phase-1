@@ -81,14 +81,17 @@ Additional detail is documented in `docs/architecture.md`.
 - `develop`: shared integration branch
 - `feature/<feature-name>`: feature delivery branches
 
-Suggested conventional commits:
-- `feat: add project management modal workflow`
-- `feat: implement task filtering and search`
-- `docs: document portal architecture and roadmap`
-- `style: refine responsive dashboard layout`
-- `refactor: isolate LocalStorage persistence behind storage module`
+Current planned pull requests for this phase:
+- PR 1 `Project Documentation` - improve README with setup steps - branch `feature/readme-enhancement`
+- PR 2 `Login UI` - add a simple login page - branch `feature/login-ui`
+- PR 3 `Dashboard Page` - create a basic dashboard layout - branch `feature/dashboard-page`
+- PR 4 `Navigation Bar` - add a reusable navbar component - branch `feature/navbar-component`
+- PR 5 `Footer Component` - add a footer with contact info - branch `feature/footer-component`
 
-Suggested showcase branches and pull requests are documented in `docs/git-workflow.md`.
+Current priority:
+- Focus on PR 1 only for now: `Project Documentation` on branch `feature/readme-enhancement`
+
+Suggested showcase branches, pull request notes, and beginner-friendly VS Code steps are documented in `docs/git-workflow.md`.
 
 ## Notes
 - `data/seedData.json` is included for reference and portability.
