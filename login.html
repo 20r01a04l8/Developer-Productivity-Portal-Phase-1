@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Developer Productivity Portal - Secure Login">
+  <title>Developer Productivity Portal | Login</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body data-page="login">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="login-container">
+    <div class="login-card surface">
+      <header class="login-header">
+        <div class="brand-block">
+          <p class="eyebrow">Phase 1 Prototype</p>
+          <h1>Developer Productivity Portal</h1>
+          <p class="brand-copy">Sign in to access your engineering dashboard</p>
+        </div>
+      </header>
+
+      <main id="main-content" class="login-form-container">
+        <form id="login-form" class="login-form" novalidate>
+          <div class="form-group">
+            <label for="username" class="form-label">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              class="form-input"
+              required
+              autocomplete="username"
+              placeholder="Enter your username"
+              aria-describedby="username-help"
+            >
+            <p id="username-help" class="form-help">Use 'admin', 'developer', or 'manager'</p>
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-input"
+              required
+              autocomplete="current-password"
+              placeholder="Enter your password"
+              aria-describedby="password-help"
+            >
+            <p id="password-help" class="form-help">Minimum 6 characters</p>
+          </div>
+
+          <div id="error-message" class="error-message hidden" role="alert" aria-live="polite"></div>
+
+          <button type="submit" id="login-submit" class="button button-primary login-submit">
+            Sign In
+          </button>
+        </form>
+
+        <div class="login-footer">
+          <button
+            type="button"
+            class="button button-link"
+            onclick="showDemoCredentials()"
+            aria-expanded="false"
+            aria-controls="demo-credentials"
+          >
+            Show Demo Credentials
+          </button>
+        </div>
+
+        <div id="demo-credentials" class="demo-credentials hidden" aria-hidden="true">
+          <h3>Demo Accounts</h3>
+          <div class="demo-account">
+            <strong>Admin:</strong> admin / admin123
+          </div>
+          <div class="demo-account">
+            <strong>Developer:</strong> developer / dev123
+          </div>
+          <div class="demo-account">
+            <strong>Manager:</strong> manager / mgr123
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initializeLoginUI, showDemoCredentials } from "./js/ui/loginUI.js";
+
+    // Make showDemoCredentials available globally for onclick
+    window.showDemoCredentials = showDemoCredentials;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initializeLoginUI();
+    });
+  </script>
+</body>
+</html>
