@@ -95,11 +95,6 @@ Current planned pull requests for this phase:
 - PR 4 `Navigation Bar` - add a reusable navbar component - branch `feature/navbar-component`
 - PR 5 `Footer Component` - add a footer with contact info - branch `feature/footer-component`
 
-Current priority:
-- Focus on PR 1 only for now: `Project Documentation` on branch `feature/readme-enhancement`
-
-Suggested showcase branches, pull request notes, and beginner-friendly VS Code steps are documented in `docs/git-workflow.md`.
-
 ## Notes
 - `data/seedData.json` is included for reference and portability.
 - `js/seedData.js` is used at runtime so the app works when opened directly from the filesystem without a local server.
