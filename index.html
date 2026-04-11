@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Developer Productivity Portal dashboard for projects and tasks.">
+  <title>Developer Productivity Portal | Dashboard</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body data-page="dashboard">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary">
+      <div class="brand-block">
+        <p class="eyebrow">Phase 1 Prototype</p>
+        <h1>Developer Productivity Portal</h1>
+        <p class="brand-copy">A static, future-ready operations cockpit for engineering delivery.</p>
+      </div>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="./index.html" data-route="dashboard">Dashboard</a>
+        <a href="./projects.html" data-route="projects">Projects</a>
+        <a href="./tasks.html" data-route="tasks">Tasks</a>
+      </nav>
+      <section class="panel surface panel-compact" aria-labelledby="phase-insight-title">
+        <p class="panel-label">Architecture Note</p>
+        <h2 id="phase-insight-title" style="color: black;">Foundation for later phases</h2>
+        <p style="color: black;">Data contracts, services, and view modules are designed to lift into APIs and React with minimal churn.</p>
+      </section>
+    </aside>
+
+    <main id="main-content" class="content">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Dashboard</p>
+          <h2>Engineering delivery at a glance</h2>
+          <p class="page-copy">Monitor portfolio health, project activity, and execution hotspots from one place.</p>
+        </div>
+        <div class="header-actions">
+          <a class="button button-secondary" href="./projects.html">Manage Projects</a>
+          <a class="button" href="./tasks.html">View Tasks</a>
+        </div>
+      </header>
+
+      <section class="status-banner surface" aria-live="polite">
+        <div>
+          <p class="panel-label">Prototype Mode</p>
+          <h3>Data persists in LocalStorage</h3>
+        </div>
+        <p>Seed data is loaded on first run so the experience works immediately by opening this file in a browser.</p>
+      </section>
+
+      <section class="metrics-grid" aria-label="Key productivity indicators">
+        <article class="metric-card surface accent-projects">
+          <p>Total Projects</p>
+          <strong id="total-projects">0</strong>
+          <span>Tracked initiatives across the portfolio</span>
+        </article>
+        <article class="metric-card surface accent-active">
+          <p>Active Tasks</p>
+          <strong id="active-tasks">0</strong>
+          <span>Work items still in motion</span>
+        </article>
+        <article class="metric-card surface accent-complete">
+          <p>Completed Tasks</p>
+          <strong id="completed-tasks">0</strong>
+          <span>Delivered items ready for review</span>
+        </article>
+        <article class="metric-card surface accent-priority">
+          <p>High Priority</p>
+          <strong id="high-priority-tasks">0</strong>
+          <span>Critical work needing attention</span>
+        </article>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="surface panel" aria-labelledby="project-snapshot-title">
+          <div class="section-heading">
+            <div>
+              <p class="panel-label">Projects</p>
+              <h3 id="project-snapshot-title">Recent project snapshot</h3>
+            </div>
+            <a href="./projects.html">Open module</a>
+          </div>
+          <div id="dashboard-project-state" class="state-message" hidden></div>
+          <div id="dashboard-projects" class="list-stack" aria-live="polite"></div>
+        </article>
+
+        <article class="surface panel" aria-labelledby="task-snapshot-title">
+          <div class="section-heading">
+            <div>
+              <p class="panel-label">Execution</p>
+              <h3 id="task-snapshot-title">Priority task queue</h3>
+            </div>
+            <a href="./tasks.html">Open module</a>
+          </div>
+          <div id="dashboard-task-state" class="state-message" hidden></div>
+          <div id="dashboard-tasks" class="list-stack" aria-live="polite"></div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

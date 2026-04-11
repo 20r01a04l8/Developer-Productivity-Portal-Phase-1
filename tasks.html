@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manage tasks in the Developer Productivity Portal.">
+  <title>Developer Productivity Portal | Tasks</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body data-page="tasks">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary">
+      <div class="brand-block">
+        <p class="eyebrow">Phase 1 Prototype</p>
+        <h1>Developer Productivity Portal</h1>
+        <p class="brand-copy">Track work execution with structured filtering, project context, and clear priorities.</p>
+      </div>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="./index.html" data-route="dashboard">Dashboard</a>
+        <a href="./projects.html" data-route="projects">Projects</a>
+        <a href="./tasks.html" data-route="tasks">Tasks</a>
+      </nav>
+    </aside>
+
+    <main id="main-content" class="content">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Task Management</p>
+          <h2>Stay focused on delivery execution</h2>
+          <p class="page-copy">Filter tasks by project, priority, and status while preserving a future-ready task contract.</p>
+        </div>
+        <div class="header-actions">
+          <button type="button" class="button" id="open-task-modal">New Task</button>
+        </div>
+      </header>
+
+      <section class="filters-grid surface panel" aria-labelledby="task-filters-title">
+        <div class="section-heading">
+          <div>
+            <p class="panel-label">Filters</p>
+            <h3 id="task-filters-title">Refine the task list</h3>
+          </div>
+        </div>
+        <div class="filter-row">
+          <label class="field">
+            <span>Project</span>
+            <select id="task-project-filter" aria-label="Filter by project">
+              <option value="all">All Projects</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Status</span>
+            <select id="task-status-filter" aria-label="Filter by status">
+              <option value="all">All Statuses</option>
+              <option value="To Do">To Do</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Done">Done</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Priority</span>
+            <select id="task-priority-filter" aria-label="Filter by priority">
+              <option value="all">All Priorities</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </label>
+          <label class="field field-search">
+            <span>Search</span>
+            <input id="task-search" type="search" placeholder="Search by task title" aria-label="Search tasks by title">
+          </label>
+        </div>
+      </section>
+
+      <section class="surface panel" aria-labelledby="task-table-title">
+        <div class="section-heading">
+          <div>
+            <p class="panel-label">Execution Queue</p>
+            <h3 id="task-table-title">Tasks by project</h3>
+          </div>
+          <button type="button" class="button button-secondary" id="clear-task-filters">Clear Filters</button>
+        </div>
+        <div id="task-feedback" class="state-message" hidden aria-live="polite"></div>
+        <div id="task-loading" class="state-message">Loading tasks...</div>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <caption class="sr-only">Task execution table</caption>
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Task</th>
+                <th scope="col">Project</th>
+                <th scope="col">Status</th>
+                <th scope="col">Priority</th>
+                <th scope="col">Created</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="task-table-body"></tbody>
+          </table>
+        </div>
+        <div id="task-empty" class="state-message" hidden>No tasks match the current filters.</div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="task-modal" class="modal" aria-labelledby="task-modal-title">
+    <form method="dialog" class="modal-shell" id="task-form">
+      <div class="modal-header">
+        <div>
+          <p class="panel-label">Task Form</p>
+          <h3 id="task-modal-title">Create task</h3>
+        </div>
+        <button type="button" class="icon-button" id="close-task-modal" aria-label="Close task form">×</button>
+      </div>
+
+      <input type="hidden" id="task-id" name="id">
+
+      <label class="field">
+        <span>Project</span>
+        <select id="task-project" name="projectId" required aria-label="Associated project"></select>
+      </label>
+
+      <label class="field">
+        <span>Task title</span>
+        <input id="task-title" name="title" type="text" maxlength="120" required aria-describedby="task-title-error">
+        <small id="task-title-error" class="field-error" aria-live="polite"></small>
+      </label>
+
+      <label class="field">
+        <span>Status</span>
+        <select id="task-status" name="status" aria-label="Task status">
+          <option value="To Do">To Do</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Done">Done</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>Priority</span>
+        <select id="task-priority" name="priority" aria-label="Task priority">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+      </label>
+
+      <div id="task-form-error" class="form-banner" hidden></div>
+
+      <div class="modal-actions">
+        <button type="button" class="button button-secondary" id="cancel-task-modal">Cancel</button>
+        <button type="submit" class="button" id="save-task">Save Task</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+export const seedData = {
+  projects: [
+    {
+      id: "PRJ-101",
+      name: "Portal Modernization",
+      owner: "Avery Chen",
+      status: "Active",
+      createdAt: "2026-03-18T09:00:00.000Z"
+    },
+    {
+      id: "PRJ-102",
+      name: "Incident Insights",
+      owner: "Samira Patel",
+      status: "Active",
+      createdAt: "2026-03-22T11:30:00.000Z"
+    },
+    {
+      id: "PRJ-103",
+      name: "CI Pipeline Hardening",
+      owner: "Jordan Brooks",
+      status: "Completed",
+      createdAt: "2026-02-28T15:45:00.000Z"
+    }
+  ],
+  tasks: [
+    {
+      id: "TSK-201",
+      projectId: "PRJ-101",
+      title: "Create dashboard KPI layout",
+      status: "Done",
+      priority: "Medium",
+      createdAt: "2026-03-19T08:15:00.000Z"
+    },
+    {
+      id: "TSK-202",
+      projectId: "PRJ-101",
+      title: "Validate modal accessibility flow",
+      status: "In Progress",
+      priority: "High",
+      createdAt: "2026-03-24T12:00:00.000Z"
+    },
+    {
+      id: "TSK-203",
+      projectId: "PRJ-102",
+      title: "Map incident sources to a unified schema",
+      status: "To Do",
+      priority: "High",
+      createdAt: "2026-03-25T10:30:00.000Z"
+    },
+    {
+      id: "TSK-204",
+      projectId: "PRJ-102",
+      title: "Document LocalStorage fallback design",
+      status: "In Progress",
+      priority: "Low",
+      createdAt: "2026-03-27T07:50:00.000Z"
+    },
+    {
+      id: "TSK-205",
+      projectId: "PRJ-103",
+      title: "Retire flaky build steps",
+      status: "Done",
+      priority: "Medium",
+      createdAt: "2026-03-03T14:20:00.000Z"
+    }
+  ]
+};

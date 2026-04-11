@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manage projects in the Developer Productivity Portal.">
+  <title>Developer Productivity Portal | Projects</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body data-page="projects">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary">
+      <div class="brand-block">
+        <p class="eyebrow">Phase 1 Prototype</p>
+        <h1>Developer Productivity Portal</h1>
+        <p class="brand-copy">Organize project ownership and status with a lightweight, persistent UI.</p>
+      </div>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="./index.html" data-route="dashboard">Dashboard</a>
+        <a href="./projects.html" data-route="projects">Projects</a>
+        <a href="./tasks.html" data-route="tasks">Tasks</a>
+      </nav>
+    </aside>
+
+    <main id="main-content" class="content">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Project Management</p>
+          <h2>Maintain a clear delivery portfolio</h2>
+          <p class="page-copy">Create, update, and retire projects while keeping the data contract aligned with future APIs.</p>
+        </div>
+        <div class="header-actions">
+          <button type="button" class="button" id="open-project-modal">New Project</button>
+        </div>
+      </header>
+
+      <section class="surface panel" aria-labelledby="project-table-title">
+        <div class="section-heading">
+          <div>
+            <p class="panel-label">Portfolio</p>
+            <h3 id="project-table-title">All projects</h3>
+          </div>
+          <button type="button" class="button button-secondary" id="reset-project-data">Reset Seed Data</button>
+        </div>
+        <div id="project-feedback" class="state-message" hidden aria-live="polite"></div>
+        <div id="project-loading" class="state-message">Loading projects...</div>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <caption class="sr-only">Project portfolio table</caption>
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Owner</th>
+                <th scope="col">Status</th>
+                <th scope="col">Created</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="project-table-body"></tbody>
+          </table>
+        </div>
+        <div id="project-empty" class="state-message" hidden>No projects found. Add your first project to get started.</div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="project-modal" class="modal" aria-labelledby="project-modal-title">
+    <form method="dialog" class="modal-shell" id="project-form">
+      <div class="modal-header">
+        <div>
+          <p class="panel-label">Project Form</p>
+          <h3 id="project-modal-title">Create project</h3>
+        </div>
+        <button type="button" class="icon-button" id="close-project-modal" aria-label="Close project form">×</button>
+      </div>
+
+      <input type="hidden" id="project-id" name="id">
+
+      <label class="field">
+        <span>Project name</span>
+        <input id="project-name" name="name" type="text" maxlength="80" required aria-describedby="project-name-error">
+        <small id="project-name-error" class="field-error" aria-live="polite"></small>
+      </label>
+
+      <label class="field">
+        <span>Owner</span>
+        <input id="project-owner" name="owner" type="text" maxlength="60" required aria-describedby="project-owner-error">
+        <small id="project-owner-error" class="field-error" aria-live="polite"></small>
+      </label>
+
+      <label class="field">
+        <span>Status</span>
+        <select id="project-status" name="status" aria-label="Project status">
+          <option value="Active">Active</option>
+          <option value="Completed">Completed</option>
+        </select>
+      </label>
+
+      <div id="project-form-error" class="form-banner" hidden></div>
+
+      <div class="modal-actions">
+        <button type="button" class="button button-secondary" id="cancel-project-modal">Cancel</button>
+        <button type="submit" class="button" id="save-project">Save Project</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

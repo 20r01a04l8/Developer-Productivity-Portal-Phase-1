@@ -1,0 +1,18 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Optional local tooling
+node_modules/
+dist/
+coverage/
+
+# Environment files
+.env
+.env.*

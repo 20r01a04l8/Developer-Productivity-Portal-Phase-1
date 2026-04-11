@@ -1,0 +1,73 @@
+@media (max-width: 1180px) {
+  .app-shell,
+  .dashboard-grid,
+  .metrics-grid,
+  .filter-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 860px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header,
+  .status-banner,
+  .section-heading,
+  .modal-header,
+  .modal-actions {
+    align-items: start;
+  }
+
+  .page-header,
+  .status-banner,
+  .section-heading,
+  .modal-header {
+    flex-direction: column;
+  }
+
+  .metrics-grid,
+  .dashboard-grid,
+  .filter-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --space-4: 1.1rem;
+    --space-5: 1.4rem;
+    --space-6: 2rem;
+  }
+
+  .app-shell {
+    padding: 0.8rem;
+  }
+
+  .sidebar,
+  .page-header,
+  .panel,
+  .status-banner,
+  .metric-card,
+  .modal-shell {
+    border-radius: 22px;
+  }
+
+  .header-actions,
+  .row-actions,
+  .modal-actions {
+    width: 100%;
+  }
+
+  .header-actions > *,
+  .modal-actions > *,
+  .row-actions > * {
+    flex: 1 1 auto;
+  }
+}
