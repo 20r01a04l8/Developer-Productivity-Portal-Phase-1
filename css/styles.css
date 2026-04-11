@@ -233,7 +233,9 @@ button {
 }
 
 .metrics-grid,
-.dashboard-grid {
+.dashboard-grid,
+.dashboard-overview-grid,
+.dashboard-planning-grid {
   display: grid;
   gap: var(--space-4);
 }
@@ -242,7 +244,15 @@ button {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.dashboard-overview-grid {
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
 .dashboard-grid {
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.dashboard-planning-grid {
   grid-template-columns: 1.1fr 0.9fr;
 }
 
@@ -276,6 +286,90 @@ button {
 .panel-label {
   color: var(--text-soft);
   margin: 0 0 var(--space-1);
+}
+
+.dashboard-hero {
+  gap: var(--space-3);
+}
+
+.dashboard-pillars,
+.extension-grid,
+.action-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.dashboard-pillars {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: var(--space-3);
+}
+
+.dashboard-chip {
+  display: inline-flex;
+  justify-content: center;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+
+.health-list {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.health-item {
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-strong);
+}
+
+.health-item dt {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+}
+
+.health-item dd {
+  margin: var(--space-1) 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.health-item p,
+.extension-card p,
+.action-card span {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.extension-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.extension-card,
+.action-card {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-strong);
+}
+
+.action-card {
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.action-card:hover,
+.action-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(23, 89, 74, 0.28);
+  box-shadow: 0 14px 35px rgba(20, 44, 30, 0.08);
 }
 
 .button,
