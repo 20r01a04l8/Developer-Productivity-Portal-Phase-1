@@ -23,6 +23,12 @@ Developer Productivity Portal is a production-style static web prototype for man
 
 No build step or package installation is required.
 
+## Demo Login
+- Open `login.html` to access the prototype login screen.
+- Use one of these demo usernames: `admin`, `developer`, or `manager`.
+- For this static prototype, any password with at least 6 characters is accepted.
+- This login flow is for front-end demonstration only and is not backed by a real authentication service.
+
 ## Project Structure
 ```text
 Phase1/
