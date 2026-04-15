@@ -6,10 +6,10 @@ This document reflects the current feature branch strategy and the pull request 
 
 Main branches:
 - `main` - the stable branch
-- `develop` - the working branch where approved features are combined
+- `develop` - the working branch where approved features are combined 
 
 Feature branches:
-- `feature/readme-enhancement`
+- `feature/readme-enhancement `
 - `feature/login-ui`
 - `feature/dashboard-page`
 - `feature/navbar-component`
